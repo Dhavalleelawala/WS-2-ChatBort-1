@@ -1,0 +1,172 @@
+/* Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Chatbox Container */
+.chatbox {
+    width: 350px;
+    max-width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Header */
+.chatbox-header {
+    background-color: #4CAF50;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Chatbox Body */
+.chatbox-body {
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Footer with Input Field */
+.chatbox-footer {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Input field styling */
+.chatbox-footer input {
+    width: 80%;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.chatbox-footer input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Send Button */
+.chatbox-footer button {
+    padding: 12px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.chatbox-footer button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Message Bubbles */
+.message {
+    max-width: 75%;
+    padding: 10px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.message.bot {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    color: #333;
+}
+
+.message.user {
+    background-color: #4CAF50;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-style: italic;
+    color: #4CAF50;
+    font-size: 0.9em;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    margin: 0 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    animation: typingDot 1s infinite alternate;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Slide In for messages */
+@keyframes slideIn {
+    0% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Typing Dots Animation */
+@keyframes typingDot {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
